@@ -6,6 +6,13 @@
 body {
   font-family: sans-serif;
 }
+header,
+main,
+footer {
+  max-width: 1440px;
+  margin: 0px auto;
+  background-color: rgba(255, 193, 68, 0.1);
+}
 
 header {
   background-color: #ffc244ff;
@@ -140,16 +147,78 @@ header img {
 .why-glovo .green-link {
   border: none;
   margin: 40px auto;
-  display: inline-block;
   cursor: pointer;
 }
 
-/*  */
+/*  countries section*/
+#top-curve {
+  background-image: url("./images/countries-top.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  height: 150px;
+}
 
 .countries {
-  height: 600px;
-  background-image: url("./images/2.svg");
+  background-color: #ffc244ff;
+  text-align: center;
+  padding: 20px 35px;
+}
+
+.countries-list {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 30px;
+}
+.countries-list a {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 22px;
+  text-decoration: none;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+/* Download apps section */
+.apps {
+  position: relative;
+}
+#bottom-curve {
+  height: 200px;
+  background-image: url(./images/countries-bottom.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top left;
+  background-position: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.apps-container {
+  display: flex;
+  align-items: center;
+}
+.apps-container > div {
+  flex: 1;
+}
+.apps-container .apps-text {
+  text-align: center;
+}
+.apps-container .apps-text ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 18px;
+}
+.apps-container .apps-text ul img {
+  max-height: 70px;
+}
+.apps-image img {
+  width: 100%;
 }
