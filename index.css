@@ -47,6 +47,15 @@ header img {
   padding: 20px 35px;
   padding-bottom: 80px;
 }
+.intro .video-side {
+  flex: 1;
+}
+.intro .text-side {
+  flex: 1.5;
+}
+.intro .video-side video {
+  width: 100%;
+}
 .intro h1 {
   font-size: 58px;
   margin: 20px 0px;
@@ -61,7 +70,7 @@ header img {
   margin: 20px 0px;
   background-color: white;
   display: flex;
-  gap: 40px;
+  gap: 20px;
   border-radius: 6px;
   padding: 12px 20px;
   width: max-content;
@@ -69,8 +78,8 @@ header img {
 .action-buttons button {
   border: none;
   background: transparent;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 14px;
+  padding: 6px;
   display: flex;
   align-items: center;
   gap: 7px;
@@ -96,8 +105,12 @@ header img {
 .restaurants-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  overflow: scroll;
   gap: 30px;
+}
+/* psuedo elements in css */
+.restaurants-container::-webkit-scrollbar {
+  display: none;
 }
 .restaurants-container button {
   min-width: 20%;
@@ -126,6 +139,9 @@ header img {
 .why-glovo {
   padding: 20px 150px;
   text-align: center;
+}
+.why-glovo:in-view {
+  background-color: red;
 }
 .reasons {
   list-style-type: none;
@@ -234,4 +250,96 @@ footer {
 }
 #footer-white-logo {
   height: 50px;
+}
+footer ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 30px;
+}
+footer ul h3 {
+  color: white;
+}
+footer ul a {
+  display: block;
+  margin: 16px 0px;
+  color: white;
+  text-decoration: none;
+}
+#language-btn {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+  padding: 10px 18px;
+  font: inherit;
+  border-radius: 4px;
+  display: flex;
+  cursor: pointer;
+}
+#language-btn span {
+  margin-left: 40px;
+  display: block;
+  transform: rotate(90deg);
+}
+
+#language-btn:hover span {
+  transform: rotate(-90deg);
+}
+/* RESPONSIVENESS */
+
+/* tablet screen */
+@media (max-width: 992px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro .video-side video {
+    width: 60%;
+  }
+  .intro h1 {
+    font-size: 40px;
+  }
+  .why-glovo {
+    padding: 20px;
+  }
+  .why-glovo .reasons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .why-glovo .reasons li {
+    width: 40%;
+  }
+  .apps .apps-container {
+    flex-direction: column-reverse;
+  }
+  footer ul {
+    flex-direction: column;
+  }
+}
+/* mobile screesn */
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+    background-color: transparent;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+  }
+  .action-buttons button:first-child {
+    background-color: white;
+    width: 100%;
+    padding: 7px;
+  }
+  .action-buttons button:last-child {
+    background-color: white;
+    color: #00a082ff;
+    width: max-content;
+    font-weight: bold;
+  }
+  .why-glovo .reasons {
+    flex-direction: column;
+  }
+  .why-glovo .reasons li {
+    width: 100%;
+  }
 }
